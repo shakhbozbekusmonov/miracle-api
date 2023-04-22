@@ -1,7 +1,7 @@
 // API Fetch JavaScript Library by Shakhbozbek Usmonov(Miracle Programmer)!
 
 // Fetch API
-const apiFetch = {
+const miracleApi = {
     // GET Request
     get: (url) => {
         return new Promise((resolve, reject) => {

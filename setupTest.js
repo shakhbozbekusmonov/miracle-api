@@ -1,7 +1,7 @@
 // API Fetch JavaScript Library testings by Shakhbozbek Usmonov(Miracle Programmer)!
 
 // GET Request
-apiFetch
+miracleApi
     .get("https://jsonplaceholder.typicode.com/posts/1")
     .then((data) => {
         console.log(data);
@@ -11,7 +11,7 @@ apiFetch
     });
 
 // POST Request
-apiFetch
+miracleApi
     .post("https://jsonplaceholder.typicode.com/posts", {
         title: "API Fetch JavaScript Library",
         body: "API Fetch JavaScript Library by Shakhbozbek Usmonov(Miracle Programmer)!",
@@ -25,7 +25,7 @@ apiFetch
     });
 
 // PUT Request
-apiFetch
+miracleApi
     .put("https://jsonplaceholder.typicode.com/posts/1", {
         title: "API Fetch JavaScript Library",
         body: "API Fetch JavaScript Library by Shakhbozbek Usmonov(Miracle Programmer)!",
@@ -39,7 +39,7 @@ apiFetch
     });
 
 // DELETE Request
-apiFetch
+miracleApi
     .delete("https://jsonplaceholder.typicode.com/posts/1")
     .then((data) => {
         console.log(data);
