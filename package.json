@@ -1,0 +1,19 @@
+{
+  "name": "api-fetch",
+  "version": "1.0.0",
+  "description": "API Fetch JavaScript library for fetch data with server!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shakhbozbekusmonov/api-fetch.git"
+  },
+  "author": "Shakhbozbek Usmonov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shakhbozbekusmonov/api-fetch/issues"
+  },
+  "homepage": "https://github.com/shakhbozbekusmonov/api-fetch#readme"
+}
