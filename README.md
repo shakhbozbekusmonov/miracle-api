@@ -1,4 +1,4 @@
-# API Fetch JavaScript Library
+# miracle-api Fetch JavaScript Library
 
 This library provides a simple and easy-to-use API for making HTTP requests in JavaScript. It supports the following HTTP methods:
 
