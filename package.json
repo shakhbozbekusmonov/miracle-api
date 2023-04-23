@@ -2,7 +2,7 @@
     "name": "miracle-api",
     "version": "1.0.0",
     "description": "Fetch Miracle API JavaScript library for fetch data with server!",
-    "main": "index.js",
+    "main": "index.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },

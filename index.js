@@ -2,96 +2,58 @@
 
 // Fetch API
 const miracleApi = {
-    // GET Request
-    get: (url) => {
-        return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", url);
-            xhr.send();
-            xhr.onload = () => {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    resolve(JSON.parse(xhr.response));
-                } else {
-                    reject({
-                        status: xhr.status,
-                        statusText: xhr.statusText,
-                    });
-                }
-            };
-        });
+    get: (url, callback) => {
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => callback(data));
     },
-    // POST Request
-    post: (url, data) => {
-        return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", url);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onload = () => {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    resolve(JSON.parse(xhr.response));
-                } else {
-                    reject({
-                        status: xhr.status,
-                        statusText: xhr.statusText,
-                    });
-                }
-            };
-            xhr.send(JSON.stringify(data));
-        });
+
+    post: (url, data, callback) => {
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => callback(data));
     },
-    // PUT Request
-    put: (url, data) => {
-        return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open("PUT", url);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onload = () => {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    resolve(JSON.parse(xhr.response));
-                } else {
-                    reject({
-                        status: xhr.status,
-                        statusText: xhr.statusText,
-                    });
-                }
-            };
-            xhr.send(JSON.stringify(data));
-        });
+
+    put: (url, data, callback) => {
+        fetch(url, {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => callback(data));
     },
-    // DELETE Request
-    delete: (url) => {
-        return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open("DELETE", url);
-            xhr.onload = () => {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    resolve(JSON.parse(xhr.response));
-                } else {
-                    reject({
-                        status: xhr.status,
-                        statusText: xhr.statusText,
-                    });
-                }
-            };
-        });
+
+    delete: (url, callback) => {
+        fetch(url, {
+            method: "DELETE",
+            headers: {
+                "Content-type": "application/json",
+            },
+        })
+            .then((res) => res.json())
+            .then((data) => callback(data));
     },
-    // PATCH Request
-    patch: (url, data) => {
-        return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open("PATCH", url);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onload = () => {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    resolve(JSON.parse(xhr.response));
-                } else {
-                    reject({
-                        status: xhr.status,
-                        statusText: xhr.statusText,
-                    });
-                }
-            };
-            xhr.send(JSON.stringify(data));
-        });
+
+    patch: (url, data, callback) => {
+        fetch(url, {
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => callback(data));
     },
 };
+
+export default miracleApi;
