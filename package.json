@@ -1,6 +1,6 @@
 {
     "name": "miracle-api",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Fetch Miracle API JavaScript library for fetch data with server!",
     "main": "index.ts",
     "scripts": {
