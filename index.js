@@ -2,57 +2,119 @@
 
 // Fetch API
 const miracleApi = {
-    get: (url, callback) => {
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => callback(data));
+    get: (url) => {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", url);
+            xhr.send();
+            xhr.responseType = "json";
+            xhr.onload = () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve(xhr.response);
+                } else {
+                    reject(xhr.statusText);
+                }
+            };
+            xhr.onloadend = () => {
+                console.log("Request ended");
+            };
+            xhr.onloadstart = () => {
+                console.log("Request started");
+            };
+            xhr.onerror = () => reject(xhr.statusText);
+            xhr.onprogress = (event) => {
+                console.log(`Received ${event.loaded} of ${event.total}`);
+            };
+            xhr.onabort = () => {
+                console.log("Request aborted");
+            };
+        });
     },
-
-    post: (url, data, callback) => {
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((data) => callback(data));
+    post: (url, data) => {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", url);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify(data));
+            xhr.responseType = "json";
+            xhr.onload = () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve(xhr.response);
+                } else {
+                    reject(xhr.statusText);
+                }
+            };
+            xhr.onloadend = () => {
+                console.log("Request ended");
+            };
+            xhr.onloadstart = () => {
+                console.log("Request started");
+            };
+            xhr.onerror = () => reject(xhr.statusText);
+            xhr.onprogress = (event) => {
+                console.log(`Received ${event.loaded} of ${event.total}`);
+            };
+            xhr.onabort = () => {
+                console.log("Request aborted");
+            };
+        });
     },
-
-    put: (url, data, callback) => {
-        fetch(url, {
-            method: "PUT",
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((data) => callback(data));
+    put: (url, data) => {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("PUT", url);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify(data));
+            xhr.responseType = "json";
+            xhr.onload = () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve(xhr.response);
+                } else {
+                    reject(xhr.statusText);
+                }
+            };
+            xhr.onloadend = () => {
+                console.log("Request ended");
+            };
+            xhr.onloadstart = () => {
+                console.log("Request started");
+            };
+            xhr.onerror = () => reject(xhr.statusText);
+            xhr.onprogress = (event) => {
+                console.log(`Received ${event.loaded} of ${event.total}`);
+            };
+            xhr.onabort = () => {
+                console.log("Request aborted");
+            };
+        });
     },
-
-    delete: (url, callback) => {
-        fetch(url, {
-            method: "DELETE",
-            headers: {
-                "Content-type": "application/json",
-            },
-        })
-            .then((res) => res.json())
-            .then((data) => callback(data));
-    },
-
-    patch: (url, data, callback) => {
-        fetch(url, {
-            method: "PATCH",
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((data) => callback(data));
+    delete: (url) => {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("DELETE", url);
+            xhr.send();
+            xhr.responseType = "json";
+            xhr.onload = () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve(xhr.response);
+                } else {
+                    reject(xhr.statusText);
+                }
+            };
+            xhr.onloadend = () => {
+                console.log("Request ended");
+            };
+            xhr.onloadstart = () => {
+                console.log("Request started");
+            };
+            xhr.onerror = () => reject(xhr.statusText);
+            xhr.onprogress = (event) => {
+                console.log(`Received ${event.loaded} of ${event.total}`);
+            };
+            xhr.onabort = () => {
+                console.log("Request aborted");
+            };
+        });
     },
 };
 
