@@ -56,4 +56,4 @@ const miracleApi = {
     },
 };
 
-export default miracleApi;
+module.exports = miracleApi;
